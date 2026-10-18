@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-[#07050a] text-slate-100 font-sans selection:bg-purple-600 selection:text-white relative overflow-x-hidden" @click="triggerFirstPlay">
+  <div class="min-h-screen bg-[#050814] text-slate-100 font-sans selection:bg-blue-600 selection:text-white relative overflow-x-hidden" @click="triggerFirstPlay">
     
     <!-- ❄️ เอฟเฟกต์หิมะตกต่อเนื่องแบบนุ่มนวลสมูท ไม่รีเซ็ตตอนกดแอ็คชั่น -->
     <div class="fixed inset-0 pointer-events-none z-10 overflow-hidden">
@@ -7,25 +7,25 @@
     </div>
 
     <!-- 🎵 เครื่องเล่นเพลง MP3 สไตล์หรูหรา -->
-    <div class="fixed bottom-5 right-5 z-50 bg-black/85 border-2 border-purple-500/40 p-4 rounded-3xl shadow-[0_0_25px_rgba(168,85,247,0.3)] backdrop-blur-2xl text-white w-72 transition-all duration-300 hover:border-purple-400 hover:scale-105" @click.stop>
+    <div class="fixed bottom-5 right-5 z-50 bg-black/85 border-2 border-blue-500/40 p-4 rounded-3xl shadow-[0_0_25px_rgba(59,130,246,0.3)] backdrop-blur-2xl text-white w-72 transition-all duration-300 hover:border-blue-400 hover:scale-105" @click.stop>
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-600/40 to-indigo-600/40 border border-purple-400/60 flex items-center justify-center text-purple-300 font-bold text-xl shadow-[0_0_15px_rgba(168,85,247,0.5)] transition-transform duration-300 hover:rotate-12">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-600/40 to-cyan-600/40 border border-blue-400/60 flex items-center justify-center text-blue-300 font-bold text-xl shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-transform duration-300 hover:rotate-12">
             🎵
           </div>
           <div class="text-xs">
-            <p class="font-bold text-purple-200 text-sm tracking-wide">มันก็เป็นแค่ครั้งหนึ่ง</p>
+            <p class="font-bold text-blue-200 text-sm tracking-wide">มันก็เป็นแค่ครั้งหนึ่ง</p>
           </div>
         </div>
         <button 
           @click="togglePlay"
-          class="w-10 h-10 rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 flex items-center justify-center font-black text-sm tracking-tighter transition-all duration-200 shadow-lg shadow-purple-900/50 active:scale-90 border border-purple-400/40 hover:scale-105 cursor-pointer text-white">
+          class="w-10 h-10 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 flex items-center justify-center font-black text-sm tracking-tighter transition-all duration-200 shadow-lg shadow-blue-950/50 active:scale-90 border border-blue-400/40 hover:scale-105 cursor-pointer text-white">
           {{ isPlaying ? '❚❚' : '▶' }}
         </button>
       </div>
 
       <!-- ส่วนปรับระดับเสียง MP3 -->
-      <div class="flex items-center gap-3 pt-3 mt-3 border-t border-purple-900/40 text-xs text-purple-300">
+      <div class="flex items-center gap-3 pt-3 mt-3 border-t border-blue-900/40 text-xs text-blue-300">
         <span class="text-sm">🔈</span>
         <input 
           type="range" 
@@ -33,9 +33,9 @@
           max="100" 
           v-model="volume" 
           @input="updateVolume"
-          class="w-full accent-purple-500 cursor-pointer h-2 bg-slate-900 rounded-lg border border-purple-900/50 transition-all"
+          class="w-full accent-blue-500 cursor-pointer h-2 bg-slate-900 rounded-lg border border-blue-900/50 transition-all"
         />
-        <span class="w-9 text-right font-bold text-purple-300">{{ volume }}%</span>
+        <span class="w-9 text-right font-bold text-blue-300">{{ volume }}%</span>
       </div>
 
       <audio ref="audioPlayer" src="/gang-song.mp3" loop preload="auto" @timeupdate="saveAudioTime"></audio>
@@ -43,47 +43,47 @@
 
     <!-- 1. หน้า Login -->
     <div v-if="!user" class="flex items-center justify-center min-h-screen p-4 relative z-20 transition-all duration-500">
-      <div class="w-full max-w-md p-8 bg-black/85 border-2 border-purple-600/50 rounded-[2.5rem] shadow-[0_0_60px_rgba(168,85,247,0.25)] backdrop-blur-2xl transition-all duration-500 hover:shadow-[0_0_80px_rgba(168,85,247,0.4)]">
+      <div class="w-full max-w-md p-8 bg-black/85 border-2 border-blue-600/50 rounded-[2.5rem] shadow-[0_0_60px_rgba(59,130,246,0.25)] backdrop-blur-2xl transition-all duration-500 hover:shadow-[0_0_80px_rgba(59,130,246,0.4)]">
         <div class="text-center mb-8 flex flex-col items-center">
           
           <div class="relative group mb-3 transition-transform duration-500 hover:scale-105">
-            <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-3xl blur-lg opacity-70 group-hover:opacity-100 transition duration-500"></div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl blur-lg opacity-70 group-hover:opacity-100 transition duration-500"></div>
             <img 
               src="/logo-3fb.png" 
               alt="Gang Crown Logo" 
-              class="relative w-32 h-32 object-contain rounded-2xl filter drop-shadow-[0_0_15px_rgba(168,85,247,0.6)]"
+              class="relative w-32 h-32 object-contain rounded-2xl filter drop-shadow-[0_0_15px_rgba(59,130,246,0.6)]"
               @error="(e) => e.target.style.display='none'"
             />
           </div>
 
-          <h1 class="text-3xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-purple-400 to-indigo-300 mt-2">THREE FOR BAHT</h1>
-          <p class="text-xs text-purple-300/60 mt-1">ระบบเช็คคลังแก๊ง (ล็อกอินด้วยชื่อในเมือง)</p>
+          <h1 class="text-3xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-slate-100 to-cyan-300 mt-2">WEAK</h1>
+          <p class="text-xs text-blue-300/60 mt-1">ระบบเช็คคลังแก๊ง</p>
         </div>
 
         <form @submit.prevent="handleLogin" class="space-y-5">
           <div>
-            <label class="block text-xs font-bold text-purple-300 uppercase tracking-widest mb-2">ชื่อในเมือง (IC Name)</label>
+            <label class="block text-xs font-bold text-blue-300 uppercase tracking-widest mb-2">ชื่อในเมือง (IC Name)</label>
             <input 
               v-model="loginIcName" 
               type="text" 
               required
               placeholder="เช่น GIORNO LE"
-              class="w-full px-4 py-3.5 bg-slate-950/80 border border-purple-900/60 rounded-2xl focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/50 text-sm transition-all duration-300 text-white placeholder-slate-600 shadow-inner"
+              class="w-full px-4 py-3.5 bg-slate-950/80 border border-blue-900/60 rounded-2xl focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/50 text-sm transition-all duration-300 text-white placeholder-slate-600 shadow-inner"
             />
           </div>
           <div>
-            <label class="block text-xs font-bold text-purple-300 uppercase tracking-widest mb-2">รหัส</label>
+            <label class="block text-xs font-bold text-blue-300 uppercase tracking-widest mb-2">รหัส</label>
             <input 
               v-model="loginPhone" 
               type="text" 
               required
               placeholder="ส่วนมากจะเป็นเบอร์โทรศัพท์"
-              class="w-full px-4 py-3.5 bg-slate-950/80 border border-purple-900/60 rounded-2xl focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/50 text-sm transition-all duration-300 text-white placeholder-slate-600 shadow-inner"
+              class="w-full px-4 py-3.5 bg-slate-950/80 border border-blue-900/60 rounded-2xl focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/50 text-sm transition-all duration-300 text-white placeholder-slate-600 shadow-inner"
             />
           </div>
           <button 
             type="submit" 
-            class="w-full py-4 bg-gradient-to-r from-purple-700 via-purple-600 to-indigo-600 hover:from-purple-600 hover:to-indigo-500 font-extrabold text-base rounded-2xl shadow-[0_0_25px_rgba(168,85,247,0.4)] transition-all duration-200 border border-purple-400/35 active:scale-95 hover:scale-[1.01] cursor-pointer">
+            class="w-full py-4 bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-600 hover:from-blue-600 hover:to-cyan-500 font-extrabold text-base rounded-2xl shadow-[0_0_25px_rgba(59,130,246,0.4)] transition-all duration-200 border border-blue-400/35 active:scale-95 hover:scale-[1.01] cursor-pointer">
             เข้าสู่ระบบคลังแก๊ง
           </button>
         </form>
@@ -98,12 +98,12 @@
     <div v-else class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8 relative z-25">
       
       <!-- Header Bar (ลำดับที่ 1) -->
-      <header class="smooth-reveal-1 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-black/75 border-2 border-purple-600/40 p-6 sm:p-8 rounded-[2.5rem] backdrop-blur-2xl mb-8 shadow-[0_0_40px_rgba(168,85,247,0.18)] transition-all duration-300 hover:border-purple-500/60">
+      <header class="smooth-reveal-1 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-black/75 border-2 border-blue-600/40 p-6 sm:p-8 rounded-[2.5rem] backdrop-blur-2xl mb-8 shadow-[0_0_40px_rgba(59,130,246,0.18)] transition-all duration-300 hover:border-blue-500/60">
         <div class="flex items-center gap-5">
           <img 
             src="/logo-text.png" 
-            alt="Three For Baht Logo" 
-            class="h-14 sm:h-18 object-contain rounded-2xl filter drop-shadow-[0_0_15px_rgba(168,85,247,0.6)] transition-transform duration-300 hover:scale-105"
+            alt="WEAK Logo" 
+            class="h-14 sm:h-18 object-contain rounded-2xl filter drop-shadow-[0_0_15px_rgba(59,130,246,0.6)] transition-transform duration-300 hover:scale-105"
             @error="(e) => e.target.style.display='none'"
           />
           
@@ -112,13 +112,13 @@
               <span v-if="userRole === 'boss'" class="bg-amber-500/20 text-amber-300 border border-amber-500/60 px-4 py-1.5 text-xs font-extrabold rounded-full uppercase tracking-wider shadow-[0_0_12px_rgba(245,158,11,0.3)] transition-all duration-300 hover:scale-105">
                 👑 หัวหน้าแก๊ง
               </span>
-              <span v-else class="bg-purple-500/20 text-purple-300 border border-purple-400/60 px-4 py-1.5 text-xs font-extrabold rounded-full uppercase tracking-wider shadow-[0_0_12px_rgba(168,85,247,0.3)] transition-all duration-300 hover:scale-105">
+              <span v-else class="bg-blue-500/20 text-blue-300 border border-blue-400/60 px-4 py-1.5 text-xs font-extrabold rounded-full uppercase tracking-wider shadow-[0_0_12px_rgba(59,130,246,0.3)] transition-all duration-300 hover:scale-105">
                 👥 สมาชิกแก๊ง
               </span>
             </div>
-            <p class="text-xs font-black tracking-widest text-purple-300/80 mt-1.5 uppercase">THREE FOR BAHT STORAGE</p>
-            <div class="flex flex-wrap items-center gap-x-6 gap-y-1 text-sm text-purple-200/70 mt-2">
-              <p>ชื่อในเมือง: <span class="text-purple-300 font-bold text-base">{{ user.ic_name }}</span></p>
+            <p class="text-xs font-black tracking-widest text-blue-300/80 mt-1.5 uppercase">WEAK STORAGE</p>
+            <div class="flex flex-wrap items-center gap-x-6 gap-y-1 text-sm text-blue-200/70 mt-2">
+              <p>ชื่อในเมือง: <span class="text-blue-300 font-bold text-base">{{ user.ic_name }}</span></p>
               <p>ชื่อ: <span class="text-slate-200 font-medium">{{ user.real_name || '-' }}</span></p>
               <p>เบอร์โทร: <span class="text-emerald-400 font-bold">{{ user.phone_number }}</span></p>
             </div>
@@ -133,13 +133,13 @@
 
       <!-- Stats Overview & Money Management (ลำดับที่ 2) -->
       <div class="smooth-reveal-2 grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <div class="bg-black/70 border border-purple-800/40 p-6 sm:p-8 rounded-[2.5rem] backdrop-blur-2xl flex flex-col justify-between shadow-xl transition-all duration-300 hover:border-purple-600/60 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)]">
+        <div class="bg-black/70 border border-blue-800/40 p-6 sm:p-8 rounded-[2.5rem] backdrop-blur-2xl flex flex-col justify-between shadow-xl transition-all duration-300 hover:border-blue-600/60 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)]">
           <div>
-            <p class="text-xs font-bold text-purple-300/70 uppercase tracking-widest">เงินแก๊งทั้งหมด</p>
+            <p class="text-xs font-bold text-blue-300/70 uppercase tracking-widest">เงินแก๊งทั้งหมด</p>
             <h2 class="text-4xl sm:text-5xl font-black text-emerald-400 mt-3 tracking-tight">$ {{ gangMoney.toLocaleString() }}</h2>
           </div>
-          <div v-if="userRole === 'boss'" class="mt-6 pt-5 border-t border-purple-900/40 flex flex-wrap gap-3 items-center">
-            <input v-model.number="inputMoney" type="number" placeholder="จำนวนเงิน" class="custom-number-input w-36 px-4 py-2.5 bg-slate-950 border border-purple-800/60 rounded-2xl text-sm text-white focus:outline-none focus:border-purple-400 transition-all duration-300" />
+          <div v-if="userRole === 'boss'" class="mt-6 pt-5 border-t border-blue-900/40 flex flex-wrap gap-3 items-center">
+            <input v-model.number="inputMoney" type="number" placeholder="จำนวนเงิน" class="custom-number-input w-36 px-4 py-2.5 bg-slate-950 border border-blue-800/60 rounded-2xl text-sm text-white focus:outline-none focus:border-blue-400 transition-all duration-300" />
             <button @click="modifyMoney('add')" class="px-5 py-2.5 bg-emerald-600/90 hover:bg-emerald-500 border border-emerald-400/50 font-bold text-xs rounded-2xl transition-all duration-200 shadow-md active:scale-95 hover:scale-105 cursor-pointer flex items-center gap-1.5 text-white">
               <span>💵</span> เติมเงิน
             </button>
@@ -149,42 +149,42 @@
           </div>
         </div>
 
-        <div class="bg-black/70 border border-purple-800/40 p-6 sm:p-8 rounded-[2.5rem] backdrop-blur-2xl flex flex-col justify-between text-center shadow-xl transition-all duration-300 hover:border-purple-600/60 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)]">
+        <div class="bg-black/70 border border-blue-800/40 p-6 sm:p-8 rounded-[2.5rem] backdrop-blur-2xl flex flex-col justify-between text-center shadow-xl transition-all duration-300 hover:border-blue-600/60 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)]">
           <div>
-            <p class="text-xs font-bold text-purple-300/70 uppercase tracking-widest">จำนวนไอเทมทั้งหมดในคลัง</p>
+            <p class="text-xs font-bold text-blue-300/70 uppercase tracking-widest">จำนวนไอเทมทั้งหมดในคลัง</p>
             <div class="flex items-baseline justify-center gap-2 mt-4 mb-2">
-              <span class="text-5xl sm:text-6xl font-black text-purple-300 tracking-tight">{{ inventory.length }}</span>
-              <span class="text-xl sm:text-2xl font-bold text-purple-400/80">รายการ</span>
+              <span class="text-5xl sm:text-6xl font-black text-blue-300 tracking-tight">{{ inventory.length }}</span>
+              <span class="text-xl sm:text-2xl font-bold text-blue-400/80">รายการ</span>
             </div>
           </div>
-          <p class="text-xs text-purple-400/50 mt-4">ระบบจัดการแก๊ง Three For Baht</p>
+          <p class="text-xs text-blue-400/50 mt-4">ระบบจัดการแก๊ง WEAK</p>
         </div>
       </div>
 
       <!-- Inventory Management Section (ลำดับที่ 3) -->
-      <div class="smooth-reveal-3 bg-black/70 border-2 border-purple-600/30 rounded-[2.5rem] p-6 sm:p-8 backdrop-blur-2xl shadow-[0_0_35px_rgba(168,85,247,0.15)] transition-all duration-300 hover:border-purple-500/50">
+      <div class="smooth-reveal-3 bg-black/70 border-2 border-blue-600/30 rounded-[2.5rem] p-6 sm:p-8 backdrop-blur-2xl shadow-[0_0_35px_rgba(59,130,246,0.15)] transition-all duration-300 hover:border-blue-500/50">
         <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 mb-8">
           <h3 class="text-xl font-black text-white flex items-center gap-2">
             📦 รายการไอเทมและราคา
           </h3>
           
-          <div v-if="userRole === 'boss'" class="bg-slate-950/90 border border-purple-800/50 p-4 rounded-3xl w-full lg:w-auto space-y-3 transition-all duration-300 shadow-inner">
+          <div v-if="userRole === 'boss'" class="bg-slate-950/90 border border-blue-800/50 p-4 rounded-3xl w-full lg:w-auto space-y-3 transition-all duration-300 shadow-inner">
             <div class="flex flex-wrap gap-2">
-              <input v-model="newItem.name" placeholder="ชื่อไอเทม" class="px-4 py-2.5 bg-slate-900 border border-purple-900/60 rounded-2xl text-sm flex-1 lg:w-40 text-white focus:outline-none focus:border-purple-400 transition-all duration-300" />
-              <input v-model.number="newItem.quantity" type="number" placeholder="จำนวน" class="custom-number-input w-24 px-3 py-2.5 bg-slate-900 border border-purple-900/60 rounded-2xl text-sm text-white focus:outline-none focus:border-purple-400 transition-all duration-300" />
-              <input v-model.number="newItem.price" type="number" placeholder="ราคา (บาท/$)" class="custom-number-input w-28 px-3 py-2.5 bg-slate-900 border border-purple-900/60 rounded-2xl text-sm text-white focus:outline-none focus:border-purple-400 transition-all duration-300" />
+              <input v-model="newItem.name" placeholder="ชื่อไอเทม" class="px-4 py-2.5 bg-slate-900 border border-blue-900/60 rounded-2xl text-sm flex-1 lg:w-40 text-white focus:outline-none focus:border-blue-400 transition-all duration-300" />
+              <input v-model.number="newItem.quantity" type="number" placeholder="จำนวน" class="custom-number-input w-24 px-3 py-2.5 bg-slate-900 border border-blue-900/60 rounded-2xl text-sm text-white focus:outline-none focus:border-blue-400 transition-all duration-300" />
+              <input v-model.number="newItem.price" type="number" placeholder="ราคา (บาท/$)" class="custom-number-input w-28 px-3 py-2.5 bg-slate-900 border border-blue-900/60 rounded-2xl text-sm text-white focus:outline-none focus:border-blue-400 transition-all duration-300" />
             </div>
 
             <div class="flex flex-col sm:flex-row gap-2 items-center">
-              <div class="flex bg-slate-900 p-1 rounded-2xl border border-purple-900/60 text-xs w-full sm:w-auto">
-                <button @click="imageMode = 'url'" :class="imageMode === 'url' ? 'bg-purple-600 text-white shadow-md' : 'text-purple-300/60'" class="flex-1 sm:flex-none px-3.5 py-2 rounded-xl font-bold transition-all duration-200 cursor-pointer">🔗 URL รูป</button>
-                <button @click="imageMode = 'file'" :class="imageMode === 'file' ? 'bg-purple-600 text-white shadow-md' : 'text-purple-300/60'" class="flex-1 sm:flex-none px-3.5 py-2 rounded-xl font-bold transition-all duration-200 cursor-pointer">💻 อัปโหลดรูป</button>
+              <div class="flex bg-slate-900 p-1 rounded-2xl border border-blue-900/60 text-xs w-full sm:w-auto">
+                <button @click="imageMode = 'url'" :class="imageMode === 'url' ? 'bg-blue-600 text-white shadow-md' : 'text-blue-300/60'" class="flex-1 sm:flex-none px-3.5 py-2 rounded-xl font-bold transition-all duration-200 cursor-pointer">🔗 URL รูป</button>
+                <button @click="imageMode = 'file'" :class="imageMode === 'file' ? 'bg-blue-600 text-white shadow-md' : 'text-blue-300/60'" class="flex-1 sm:flex-none px-3.5 py-2 rounded-xl font-bold transition-all duration-200 cursor-pointer">💻 อัปโหลดรูป</button>
               </div>
 
-              <input v-if="imageMode === 'url'" v-model="newItem.image_url" placeholder="วางลิงก์รูปภาพ (https://...)" class="px-4 py-2.5 bg-slate-900 border border-purple-900/60 rounded-2xl text-sm flex-1 text-white w-full focus:outline-none focus:border-purple-400 transition-all duration-300" />
-              <input v-else type="file" accept="image/*" @change="handleFileUpload" class="px-3 py-2 bg-slate-900 border border-purple-900/60 rounded-2xl text-xs flex-1 text-slate-300 w-full file:mr-3 file:py-1 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-purple-600 file:text-white hover:file:bg-purple-500 transition-all duration-300 cursor-pointer" />
+              <input v-if="imageMode === 'url'" v-model="newItem.image_url" placeholder="วางลิงก์รูปภาพ (https://...)" class="px-4 py-2.5 bg-slate-900 border border-blue-900/60 rounded-2xl text-sm flex-1 text-white w-full focus:outline-none focus:border-blue-400 transition-all duration-300" />
+              <input v-else type="file" accept="image/*" @change="handleFileUpload" class="px-3 py-2 bg-slate-900 border border-blue-900/60 rounded-2xl text-xs flex-1 text-slate-300 w-full file:mr-3 file:py-1 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-blue-600 file:text-white hover:file:bg-blue-500 transition-all duration-300 cursor-pointer" />
 
-              <button @click="addItem" :disabled="isUploading" class="w-full sm:w-auto px-6 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 disabled:bg-slate-800 text-xs font-extrabold rounded-2xl transition-all duration-200 whitespace-nowrap shadow-md active:scale-95 hover:scale-105 border border-purple-400/30 cursor-pointer">
+              <button @click="addItem" :disabled="isUploading" class="w-full sm:w-auto px-6 py-2.5 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 disabled:bg-slate-800 text-xs font-extrabold rounded-2xl transition-all duration-200 whitespace-nowrap shadow-md active:scale-95 hover:scale-105 border border-blue-400/30 cursor-pointer">
                 {{ isUploading ? 'กำลังอัปโหลด...' : '➕ เพิ่มไอเทม' }}
               </button>
             </div>
@@ -194,7 +194,7 @@
         <div class="overflow-x-auto">
           <table class="w-full text-left border-collapse">
             <thead>
-              <tr class="border-b border-purple-900/50 text-xs font-bold text-purple-300/70 uppercase tracking-widest">
+              <tr class="border-b border-blue-900/50 text-xs font-bold text-blue-300/70 uppercase tracking-widest">
                 <th class="py-4 px-5 w-24">รูปภาพ</th>
                 <th class="py-4 px-5">ชื่อไอเทม</th>
                 <th class="py-4 px-5">จำนวน</th>
@@ -202,17 +202,17 @@
                 <th class="py-4 px-5 text-right" v-if="userRole === 'boss'">จัดการ</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-purple-900/30 text-base">
-              <tr v-for="item in inventory" :key="item.id" class="hover:bg-purple-950/40 transition-all duration-300 group">
+            <tbody class="divide-y divide-blue-900/30 text-base">
+              <tr v-for="item in inventory" :key="item.id" class="hover:bg-blue-950/40 transition-all duration-300 group">
                 <td class="py-4 px-5">
-                  <div class="w-16 h-16 rounded-2xl bg-slate-950 border-2 border-purple-700/50 flex items-center justify-center overflow-hidden shadow-[0_0_15px_rgba(168,85,247,0.2)] transition-all duration-300 group-hover:scale-105 group-hover:border-purple-400">
+                  <div class="w-16 h-16 rounded-2xl bg-slate-950 border-2 border-blue-700/50 flex items-center justify-center overflow-hidden shadow-[0_0_15px_rgba(59,130,246,0.2)] transition-all duration-300 group-hover:scale-105 group-hover:border-blue-400">
                     <img v-if="item.image_url" :src="item.image_url" alt="item" class="w-full h-full object-cover rounded-xl" @error="item.image_url = ''" />
                     <span v-else class="text-2xl">📦</span>
                   </div>
                 </td>
-                <td class="py-4 px-5 font-bold text-purple-100 text-lg sm:text-xl transition-colors duration-300 group-hover:text-purple-300">{{ item.name }}</td>
+                <td class="py-4 px-5 font-bold text-blue-100 text-lg sm:text-xl transition-colors duration-300 group-hover:text-blue-300">{{ item.name }}</td>
                 <td class="py-4 px-5">
-                  <span class="px-4 py-2 bg-purple-950/80 border border-purple-500/50 text-purple-300 rounded-2xl font-black text-base shadow-[0_0_12px_rgba(168,85,247,0.2)] inline-block transition-all duration-300 group-hover:scale-105">
+                  <span class="px-4 py-2 bg-blue-950/80 border border-blue-500/50 text-blue-300 rounded-2xl font-black text-base shadow-[0_0_12px_rgba(59,130,246,0.2)] inline-block transition-all duration-300 group-hover:scale-105">
                     {{ item.quantity.toLocaleString() }} ชิ้น
                   </span>
                 </td>
@@ -228,9 +228,9 @@
                         type="number" 
                         v-model.number="item.editPrice" 
                         placeholder="ราคาใหม่" 
-                        class="custom-number-input w-24 px-2.5 py-1.5 bg-slate-950 border border-purple-800/60 rounded-xl text-xs text-center text-white focus:outline-none focus:border-purple-400"
+                        class="custom-number-input w-24 px-2.5 py-1.5 bg-slate-950 border border-blue-800/60 rounded-xl text-xs text-center text-white focus:outline-none focus:border-blue-400"
                       />
-                      <button @click="updateItemPrice(item)" class="px-2.5 py-1.5 bg-purple-900/60 hover:bg-purple-600 border border-purple-400/50 text-white rounded-xl text-xs font-bold transition-all cursor-pointer shadow-md">ตั้งราคา</button>
+                      <button @click="updateItemPrice(item)" class="px-2.5 py-1.5 bg-blue-900/60 hover:bg-blue-600 border border-blue-400/50 text-white rounded-xl text-xs font-bold transition-all cursor-pointer shadow-md">ตั้งราคา</button>
                     </div>
                   </div>
                 </td>
@@ -242,16 +242,16 @@
                       v-model.number="item.adjustAmount" 
                       @keyup.enter="adjustQuantityCustom(item, 'add')"
                       placeholder="จำนวน" 
-                      class="custom-number-input w-20 px-3 py-2 bg-slate-950 border border-purple-800/60 rounded-xl text-xs text-center text-white focus:outline-none focus:border-purple-400 transition-all"
+                      class="custom-number-input w-20 px-3 py-2 bg-slate-950 border border-blue-800/60 rounded-xl text-xs text-center text-white focus:outline-none focus:border-blue-400 transition-all"
                     />
-                    <button @click="adjustQuantityCustom(item, 'add')" class="w-9 h-9 bg-purple-900/60 hover:bg-purple-600 border border-purple-400/50 rounded-xl text-sm font-black transition-all duration-200 active:scale-90 hover:scale-110 flex items-center justify-center text-white shadow-md cursor-pointer" title="เพิ่มจำนวน">+</button>
-                    <button @click="adjustQuantityCustom(item, 'subtract')" class="w-9 h-9 bg-purple-900/60 hover:bg-purple-600 border border-purple-400/50 rounded-xl text-sm font-black transition-all duration-200 active:scale-90 hover:scale-110 flex items-center justify-center text-white shadow-md cursor-pointer" title="ลดจำนวน">-</button>
+                    <button @click="adjustQuantityCustom(item, 'add')" class="w-9 h-9 bg-blue-900/60 hover:bg-blue-600 border border-blue-400/50 rounded-xl text-sm font-black transition-all duration-200 active:scale-90 hover:scale-110 flex items-center justify-center text-white shadow-md cursor-pointer" title="เพิ่มจำนวน">+</button>
+                    <button @click="adjustQuantityCustom(item, 'subtract')" class="w-9 h-9 bg-blue-900/60 hover:bg-blue-600 border border-blue-400/50 rounded-xl text-sm font-black transition-all duration-200 active:scale-90 hover:scale-110 flex items-center justify-center text-white shadow-md cursor-pointer" title="ลดจำนวน">-</button>
                     <button @click="deleteItem(item.id)" class="px-3.5 h-9 bg-rose-600/80 hover:bg-rose-600 border border-rose-400/50 text-white rounded-xl text-xs font-bold transition-all duration-200 active:scale-90 hover:scale-105 shadow-md cursor-pointer">ลบ</button>
                   </div>
                 </td>
               </tr>
               <tr v-if="inventory.length === 0">
-                <td :colspan="userRole === 'boss' ? 5 : 4" class="text-center py-12 text-purple-300/40 text-base">ยังไม่มีไอเทมในคลังแก๊ง</td>
+                <td :colspan="userRole === 'boss' ? 5 : 4" class="text-center py-12 text-blue-300/40 text-base">ยังไม่มีไอเทมในคลังแก๊ง</td>
               </tr>
             </tbody>
           </table>
@@ -598,10 +598,10 @@ const deleteItem = async (id) => {
 .snowflake {
   position: absolute;
   top: -20px;
-  color: #e9d5ff;
+  color: #bfdbfe;
   user-select: none;
   animation: snowfall linear infinite;
-  text-shadow: 0 0 10px rgba(168, 85, 247, 0.9);
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.9);
   will-change: transform;
 }
 
